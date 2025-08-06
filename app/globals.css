@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Elite Motors Brand Colors */
+  --jet-black: hsl(0, 0%, 4%);
+  --flame-red: hsl(355, 90%, 48%);
+  --ice-silver: hsl(0, 0%, 90%);
+  
+  /* Dark theme optimized for luxury automotive */
+  --background: hsl(0, 0%, 4%);
+  --foreground: hsl(0, 0%, 90%);
+  --muted: hsl(0, 0%, 15%);
+  --muted-foreground: hsl(0, 0%, 65%);
+  --popover: hsl(0, 0%, 8%);
+  --popover-foreground: hsl(0, 0%, 90%);
+  --card: hsl(0, 0%, 8%);
+  --card-foreground: hsl(0, 0%, 90%);
+  --border: hsl(0, 0%, 20%);
+  --input: hsl(0, 0%, 20%);
+  --primary: hsl(355, 90%, 48%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(0, 0%, 15%);
+  --secondary-foreground: hsl(0, 0%, 90%);
+  --accent: hsl(0, 0%, 15%);
+  --accent-foreground: hsl(0, 0%, 90%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(355, 90%, 48%);
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-montserrat antialiased bg-background text-foreground;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6, .heading {
+    font-family: 'Bebas Neue', sans-serif;
+  }
+}
+
+@layer components {
+  .nav-link {
+    @apply relative transition-all duration-300;
+  }
+  
+  .nav-link::after {
+    @apply content-[''] absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300;
+  }
+  
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+
+  .car-card {
+    @apply bg-card border border-border rounded-xl overflow-hidden transition-all duration-500 hover:scale-105 hover:border-primary hover:shadow-2xl;
+  }
+
+  .car-card img {
+    @apply transition-transform duration-700 hover:scale-110;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-primary-foreground hover:opacity-90 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-primary;
+  }
+
+  .btn-secondary {
+    @apply border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-primary;
+  }
+
+  .feature-card {
+    @apply bg-card backdrop-blur-sm border border-border rounded-xl p-6 sm:p-8 hover:bg-muted transition-all duration-500 hover:shadow-lg;
+  }
+
+  .testimonial-card {
+    @apply bg-card backdrop-blur-sm border border-border rounded-xl p-6 sm:p-8 hover:bg-muted transition-all duration-500 hover:shadow-lg;
+  }
+}
+
+@layer utilities {
+  .font-bebas {
+    font-family: 'Bebas Neue', sans-serif;
+  }
+  
+  .font-montserrat {
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  /* Responsive text utilities */
+  .text-responsive-xs {
+    @apply text-xs sm:text-sm md:text-base;
+  }
+
+  .text-responsive-sm {
+    @apply text-sm sm:text-base md:text-lg;
+  }
+
+  .text-responsive-base {
+    @apply text-base sm:text-lg md:text-xl;
+  }
+
+  .text-responsive-lg {
+    @apply text-lg sm:text-xl md:text-2xl;
+  }
+
+  .text-responsive-xl {
+    @apply text-xl sm:text-2xl md:text-3xl;
+  }
+
+  .text-responsive-2xl {
+    @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl;
+  }
+
+  .text-responsive-3xl {
+    @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl;
+  }
+
+  /* Responsive spacing utilities */
+  .spacing-responsive {
+    @apply space-y-4 sm:space-y-6 md:space-y-8;
+  }
+
+  .gap-responsive {
+    @apply gap-4 sm:gap-6 md:gap-8 lg:gap-12;
+  }
+
+  .padding-responsive {
+    @apply p-4 sm:p-6 md:p-8 lg:p-12;
+  }
+
+  .margin-responsive {
+    @apply m-4 sm:m-6 md:m-8 lg:m-12;
+  }
+
+  .text-jet-black {
+    color: hsl(0, 0%, 4%);
+  }
+
+  .text-flame-red {
+    color: hsl(355, 90%, 48%);
+  }
+
+  .text-ice-silver {
+    color: hsl(0, 0%, 90%);
+  }
+
+  .bg-jet-black {
+    background-color: hsl(0, 0%, 4%);
+  }
+
+  .bg-flame-red {
+    background-color: hsl(355, 90%, 48%);
+  }
+
+  .bg-ice-silver {
+    background-color: hsl(0, 0%, 90%);
+  }
+
+  .border-flame-red {
+    border-color: hsl(355, 90%, 48%);
+  }
+
+  .clip-path-bottom {
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.8s ease-out;
+  }
+
+  .animate-zoom-in {
+    animation: zoomIn 0.5s ease-out;
+  }
+
+  .animate-pulse-red {
+    animation: pulseRed 2s infinite;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulseRed {
+  0%, 100% {
+    box-shadow: 0 0 0 0 hsla(355, 90%, 48%, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px hsla(355, 90%, 48%, 0);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Ensure proper focus visibility */
+:focus-visible {
+  outline: 2px solid hsl(355, 90%, 48%);
+  outline-offset: 2px;
+}
