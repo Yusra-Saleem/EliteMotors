@@ -79,7 +79,7 @@ export default function Navbar() {
                 aria-controls="mobile-menu"
                 aria-label="Toggle mobile menu"
               >
-                <Menu className="h-6 w-6" />
+                <Menu className="h-6 w-6" aria-label="Open navigation menu"/>
               </button>
             </div>
           </div>
