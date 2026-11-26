@@ -56,7 +56,7 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) to view the dealership catalog.
+Open [http://localhost:3000](http://localhost:3000).
 
 ## 6. Author and License
 
